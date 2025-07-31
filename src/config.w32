@@ -1,0 +1,7 @@
+ARG_ENABLE('fxcore', 'fxcore support', 'no');
+
+if (PHP_FXCORE != 'no') {
+	AC_DEFINE('HAVE_FXCORE', 1, 'fxcore support enabled');
+
+	EXTENSION('fxcore', 'fxcore.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
