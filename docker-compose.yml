@@ -1,0 +1,23 @@
+name: ${COMPOSE_NAME}
+
+services:
+  dev_env:
+    container_name: ${CONTAINER_NAME}
+    build:
+      tags:
+        - local/${EXT_NAME}:8.2.0
+      context: ./docker
+      dockerfile: Dockerfile
+      args:
+        - EXT_NAME=${EXT_NAME}
+      target: runner
+    ports:
+      - "8080:80"
+    volumes:
+      - ${SRC_PATH:-./src}:/php/src
+      - ${SERVER_PATH:-./server}:/php/server
+      - ${LOGS_PATH:-./logs}:/php/logs
+      - php-extensions:/php/php-debug/lib/php/extensions
+
+volumes:
+  php-extensions:
