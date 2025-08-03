@@ -5,7 +5,7 @@ services:
     container_name: ${CONTAINER_NAME}
     build:
       tags:
-        - local/${EXT_NAME}:8.2.0
+        - local/${EXT_NAME}:8.3.0
       context: ./docker
       dockerfile: Dockerfile
       args:

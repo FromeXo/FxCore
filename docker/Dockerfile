@@ -24,7 +24,7 @@ ENV PATH="/php/php-debug/bin:$PATH"
 # Get PHP
 # /php/php-debug - The debug build of PHP.
 # /php/php-src   - Source files used to build PHP.
-COPY --from=fromexo/extforge-phpdebug:php-8.2.0 /php /php
+COPY --from=fromexo/extforge-phpdebug:php-8.3.0 /php /php
 
 # Add extension to php.ini
 RUN echo "\nextension=${EXT_NAME}.so" >> /php/php-debug/etc/php.ini
