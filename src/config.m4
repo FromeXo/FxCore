@@ -12,7 +12,7 @@ if test "$PHP_FXCORE" != "no"; then
   PHP_ADD_BUILD_DIR([$ext_srcdir/src])
   PHP_ADD_BUILD_DIR([$ext_builddir/src])
 
-  define([SOURCE_FILES], [fxcore.c m4_esyscmd([find src -name '*.c' | tr '\n' ' '])])
+  define([SOURCE_FILES], [fxcore.c m4_esyscmd([find src -name '*.c' | tr '\n' ' ' | sed 's/ *$//'])])
 
   PHP_NEW_EXTENSION(fxcore, [SOURCE_FILES], $ext_shared)
 fi
