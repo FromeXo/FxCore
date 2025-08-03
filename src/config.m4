@@ -9,5 +9,7 @@ if test "$PHP_FXCORE" != "no"; then
   
   AC_DEFINE(HAVE_FXCORE, 1, [ Have fxcore support ])
 
-  PHP_NEW_EXTENSION(fxcore, fxcore.c, $ext_shared)
+  define([SOURCE_FILES], [fxcore.c m4_esyscmd([find src -name '*.c' | tr '\n' ' '])])
+
+  PHP_NEW_EXTENSION(fxcore, SOURCE_FILES, $ext_shared)
 fi
