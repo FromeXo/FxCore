@@ -13,7 +13,7 @@ body:
     attributes:
       label: Test Description
       description: What is the test trying to verify?
-      placeholder: "Check if FxCore\Http\Uri is registered"
+      placeholder: "Check if FxCore\\Http\\Uri is registered"
     validations:
       required: true
 
@@ -31,7 +31,7 @@ body:
     attributes:
       label: Expected Behavior
       description: What is the test expecting to happen?
-      placeholder: "The class FxCore\Http\Uri should be defined and registered by the extension."
+      placeholder: "The class FxCore\\Http\\Uri should be defined and registered by the extension."
     validations:
       required: true
 
@@ -41,7 +41,7 @@ body:
       label: Actual Result (optional)
       description: What actually happens when the test runs?
       placeholder: |
-        Fatal error: Uncaught Error: Class 'FxCore\Http\Uri' not found
+        Fatal error: Uncaught Error: Class 'FxCore\\Http\\Uri' not found
     validations:
       required: false
 
@@ -52,6 +52,6 @@ body:
       description: Any ideas, context, or hints on how to fix the issue?
       placeholder: |
         - Check if Uri class is registered in MINIT.
-        - Should be namespaced correctly under FxCore\Http.
+        - Should be namespaced correctly under FxCore\\Http.
     validations:
       required: false
