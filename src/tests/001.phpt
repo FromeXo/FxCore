@@ -4,7 +4,7 @@ Check if fxcore is loaded
 fxcore
 --FILE--
 <?php
-echo 'The extension "fxcore" is available';
+echo in_array('fxcore', get_loaded_extensions(), true) ? 'Pass' : 'Fail';
 ?>
 --EXPECT--
-The extension "fxcore" is available
+Pass
