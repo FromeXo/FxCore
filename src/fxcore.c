@@ -27,6 +27,13 @@ PHP_RINIT_FUNCTION(fxcore)
 }
 /* }}} */
 
+/* {{{ PHP_MINIT_FUNCTION */
+PHP_MINIT_FUNCTION(fxcore)
+{
+	zend_class_entry *FxCore_Http_Uri_ce = register_class_FxCore_Http_Uri();
+}
+/* }}} */
+
 /* {{{ PHP_MINFO_FUNCTION */
 PHP_MINFO_FUNCTION(fxcore)
 {
@@ -41,7 +48,7 @@ zend_module_entry fxcore_module_entry = {
 	STANDARD_MODULE_HEADER,
 	"fxcore",				/* Extension name */
 	NULL,					/* zend_function_entry */
-	NULL,					/* PHP_MINIT - Module initialization */
+	PHP_MINIT(fxcore),		/* PHP_MINIT - Module initialization */
 	NULL,					/* PHP_MSHUTDOWN - Module shutdown */
 	PHP_RINIT(fxcore),		/* PHP_RINIT - Request initialization */
 	NULL,					/* PHP_RSHUTDOWN - Request shutdown */
