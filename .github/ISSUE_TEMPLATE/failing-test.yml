@@ -1,0 +1,57 @@
+name: Failing Test Case
+description: Report a test that currently fails and needs to be implemented or fixed.
+title: "[Failing Test] <short description of the problem>"
+labels: [failing-test, needs-implementation]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide details about a test that currently fails and needs fixing or implementation.
+
+  - type: input
+    id: test-description
+    attributes:
+      label: Test Description
+      description: What is the test trying to verify?
+      placeholder: "Check if FxCore\Http\Uri is registered"
+    validations:
+      required: true
+
+  - type: input
+    id: test-file
+    attributes:
+      label: Test File Path
+      description: Where is the failing test file located?
+      placeholder: "src/tests/http/uri/001 - class exists.phpt"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What is the test expecting to happen?
+      placeholder: "The class FxCore\Http\Uri should be defined and registered by the extension."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-result
+    attributes:
+      label: Actual Result (optional)
+      description: What actually happens when the test runs?
+      placeholder: |
+        Fatal error: Uncaught Error: Class 'FxCore\Http\Uri' not found
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes or Suggested Fix (optional)
+      description: Any ideas, context, or hints on how to fix the issue?
+      placeholder: |
+        - Check if Uri class is registered in MINIT.
+        - Should be namespaced correctly under FxCore\Http.
+    validations:
+      required: false
