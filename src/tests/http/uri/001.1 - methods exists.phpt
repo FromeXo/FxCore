@@ -1,5 +1,5 @@
 --TEST--
-Check if FxCore\Http\Uri has methods
+Check if FxCore\Http\Uri has all of it's methods
 --EXTENSIONS--
 fxcore
 --FILE--
